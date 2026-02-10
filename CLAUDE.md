@@ -49,16 +49,27 @@ Use this agent as an expert reference for Figma plugin development, design-to-co
 
 ## Installation
 
-### Load as a plugin (recommended)
+### npx (recommended)
+
+```bash
+# Install globally — available in all projects
+npx figma-agent
+
+# Install to current project only
+npx figma-agent --local
+
+# Remove installed files
+npx figma-agent --uninstall
+```
+
+### Plugin mode (for development)
 
 ```bash
 # Load directly when starting Claude Code
 claude --plugin-dir /path/to/figma-agent
 ```
 
-To make it permanently available, publish to a [plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces) and install with `/plugin install`.
-
-### Manual installation (alternative)
+### Manual installation (requires clone)
 
 ```bash
 # Symlink all skills

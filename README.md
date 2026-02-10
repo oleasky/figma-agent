@@ -14,16 +14,27 @@ Figma Agent turns Claude into a Figma expert. It encodes production-proven patte
 
 ## Installation
 
-### Load as a plugin (recommended)
+### npx (recommended)
 
 ```bash
-# Load directly during development or personal use
+# Install globally — available in all projects
+npx figma-agent
+
+# Install to current project only
+npx figma-agent --local
+
+# Remove installed files
+npx figma-agent --uninstall
+```
+
+### Plugin mode (for development)
+
+```bash
+# Load directly when starting Claude Code
 claude --plugin-dir /path/to/figma-agent
 ```
 
-To make it permanent, publish to a [plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces) and install with `/plugin install`.
-
-### Manual installation (alternative)
+### Manual (requires clone)
 
 ```bash
 # Symlink all skills to ~/.claude/skills/
@@ -73,6 +84,8 @@ Reference any module directly in your project:
 
 ```
 figma-agent/
+  bin/
+    install.js           # npx installer (copies files to ~/.claude/)
   .claude-plugin/
     plugin.json          # Claude Code plugin manifest
   skills/
@@ -83,6 +96,7 @@ figma-agent/
     map-payload-block/   # Figma -> PayloadCMS block
     audit-plugin/        # Plugin quality audit
   knowledge/             # 19 standalone knowledge modules
+  package.json           # npm package for npx installation
 ```
 
 ## CSS Strategy

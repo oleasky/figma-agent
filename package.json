@@ -1,0 +1,28 @@
+{
+  "name": "figma-agent",
+  "version": "1.0.0",
+  "description": "Figma design-to-code expertise for Claude Code — 19 knowledge modules and 6 invokable skills for layout interpretation, React/HTML generation, token extraction, PayloadCMS mapping, and plugin auditing.",
+  "bin": {
+    "figma-agent": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "knowledge"
+  ],
+  "keywords": [
+    "figma",
+    "claude-code",
+    "design-to-code",
+    "react",
+    "css",
+    "design-tokens",
+    "payloadcms"
+  ],
+  "author": "aolea",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aolea/figma-agent"
+  }
+}

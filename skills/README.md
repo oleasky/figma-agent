@@ -20,10 +20,13 @@ This agent uses the Claude Code plugin format (`.claude-plugin/plugin.json`). Sk
 ## Installation
 
 ```bash
-# Recommended: load as Claude Code plugin
+# Recommended: install via npx
+npx figma-agent
+
+# Alternative: load as Claude Code plugin (for development)
 claude --plugin-dir /path/to/figma-agent
 
-# Alternative: manual symlinks
+# Manual: symlinks (requires clone)
 ./install.sh
 ```
 
