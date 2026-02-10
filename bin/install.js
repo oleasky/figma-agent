@@ -9,7 +9,7 @@ const readline = require('readline');
 
 // --- Constants ---
 
-const PLUGIN_NAME = 'figma-code-agent';
+const PLUGIN_NAME = 'fca';
 
 const SKILL_NAMES = [
   'interpret-layout',
@@ -49,8 +49,8 @@ function getTargets(base) {
 }
 
 function getKnowledgeRefPath(base) {
-  // For global: @~/.claude/figma-code-agent/knowledge/filename.md
-  // For local: @.claude/figma-code-agent/knowledge/filename.md
+  // For global: @~/.claude/fca/knowledge/filename.md
+  // For local: @.claude/fca/knowledge/filename.md
   const home = os.homedir();
   if (base.startsWith(home)) {
     return `~/.claude/${PLUGIN_NAME}/knowledge`;
@@ -149,7 +149,7 @@ function install(base) {
   console.log('Invoke skills in Claude Code:');
   for (const name of SKILL_NAMES) {
     const desc = SKILL_DESCRIPTIONS[name] || '';
-    console.log(`  /figma-code-agent:${name.padEnd(22)} ${desc}`);
+    console.log(`  /fca:${name.padEnd(22)} ${desc}`);
   }
   console.log('');
   console.log('Tip: Use /clear before invoking a skill for a fresh context window.');
@@ -185,7 +185,7 @@ function uninstall(base) {
     }
     fs.rmSync(targets.knowledge, { recursive: true, force: true });
 
-    // Remove parent figma-code-agent directory if empty
+    // Remove parent fca directory if empty
     const parentDir = path.dirname(targets.knowledge);
     try {
       const remaining = fs.readdirSync(parentDir);

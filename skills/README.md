@@ -10,12 +10,12 @@ This agent uses the Claude Code plugin format (`.claude-plugin/plugin.json`). Sk
 
 | Skill | Command | Description | Knowledge Modules |
 |-------|---------|-------------|-------------------|
-| Interpret Layout | `/figma-code-agent:interpret-layout` | Interpret Figma Auto Layout → CSS Flexbox with correct sizing modes | layout |
-| Generate React | `/figma-code-agent:generate-react` | Generate production-grade React/TSX component from Figma node data | layout, visual, typography, assets, semantic, css-strategy |
-| Generate HTML | `/figma-code-agent:generate-html` | Generate semantic HTML + layered CSS from Figma node data | layout, visual, typography, assets, semantic, css-strategy, design-tokens |
-| Extract Tokens | `/figma-code-agent:extract-tokens` | Extract design tokens → CSS custom properties + Tailwind config | design-tokens, design-tokens-variables, figma-api-variables, css-strategy |
-| Map PayloadCMS Block | `/figma-code-agent:map-payload-block` | Map Figma component → PayloadCMS block config + renderer + types | payload-blocks, payload-figma-mapping, payload-visual-builder, css-strategy |
-| Audit Plugin | `/figma-code-agent:audit-plugin` | Audit Figma plugin code against production best practices | plugin-architecture, plugin-codegen, plugin-best-practices, figma-api-plugin |
+| Interpret Layout | `/fca:interpret-layout` | Interpret Figma Auto Layout → CSS Flexbox with correct sizing modes | layout |
+| Generate React | `/fca:generate-react` | Generate production-grade React/TSX component from Figma node data | layout, visual, typography, assets, semantic, css-strategy |
+| Generate HTML | `/fca:generate-html` | Generate semantic HTML + layered CSS from Figma node data | layout, visual, typography, assets, semantic, css-strategy, design-tokens |
+| Extract Tokens | `/fca:extract-tokens` | Extract design tokens → CSS custom properties + Tailwind config | design-tokens, design-tokens-variables, figma-api-variables, css-strategy |
+| Map PayloadCMS Block | `/fca:map-payload-block` | Map Figma component → PayloadCMS block config + renderer + types | payload-blocks, payload-figma-mapping, payload-visual-builder, css-strategy |
+| Audit Plugin | `/fca:audit-plugin` | Audit Figma plugin code against production best practices | plugin-architecture, plugin-codegen, plugin-best-practices, figma-api-plugin |
 
 ## Installation
 
@@ -45,20 +45,20 @@ Each skill file follows this structure:
 
 ```
 # Interpret a Figma Auto Layout frame
-/figma-code-agent:interpret-layout <paste Figma Auto Layout JSON node data>
+/fca:interpret-layout <paste Figma Auto Layout JSON node data>
 
 # Generate a React component from Figma design
-/figma-code-agent:generate-react <paste Figma node data or describe the component>
+/fca:generate-react <paste Figma node data or describe the component>
 
 # Generate vanilla HTML + CSS from Figma design
-/figma-code-agent:generate-html <paste Figma node data>
+/fca:generate-html <paste Figma node data>
 
 # Extract design tokens from Figma Variables
-/figma-code-agent:extract-tokens <paste Figma Variables API response or style data>
+/fca:extract-tokens <paste Figma Variables API response or style data>
 
 # Map a Figma component to a PayloadCMS block
-/figma-code-agent:map-payload-block <paste Figma component data>
+/fca:map-payload-block <paste Figma component data>
 
 # Audit a Figma plugin codebase
-/figma-code-agent:audit-plugin <path to Figma plugin project>
+/fca:audit-plugin <path to Figma plugin project>
 ```

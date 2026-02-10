@@ -10,7 +10,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SKILLS_DIR="${HOME}/.claude/skills"
-PLUGIN_NAME="figma-code-agent"
+PLUGIN_NAME="fca"
 
 # Skill names (directory names under skills/)
 SKILL_NAMES=(
@@ -50,7 +50,7 @@ Skills installed:
   audit-plugin          Audit plugin against best practices
 
 Install location: ~/.claude/skills/${PLUGIN_NAME}--{name}/SKILL.md
-Invocation:       /figma-code-agent:{skill-name}
+Invocation:       /fca:{skill-name}
 EOF
 }
 
@@ -136,7 +136,7 @@ done
 
 if [[ $missing -gt 0 ]]; then
   echo ""
-  echo "Aborting: ${missing} source file(s) missing. Run from the figma-code-agent root directory."
+  echo "Aborting: ${missing} source file(s) missing. Run from the figma-code-agent root directory (fca)."
   exit 1
 fi
 echo "  All ${#SKILL_NAMES[@]} source files found."
@@ -214,11 +214,11 @@ fi
 
 echo ""
 echo "Invoke skills in Claude Code:"
-echo "  /figma-code-agent:interpret-layout      Interpret Auto Layout -> CSS Flexbox"
-echo "  /figma-code-agent:generate-react        Generate React/TSX from Figma node"
-echo "  /figma-code-agent:generate-html         Generate HTML + layered CSS"
-echo "  /figma-code-agent:extract-tokens        Extract design tokens -> CSS vars + Tailwind"
-echo "  /figma-code-agent:map-payload-block     Map Figma component -> PayloadCMS block"
-echo "  /figma-code-agent:audit-plugin          Audit plugin against best practices"
+echo "  /fca:interpret-layout      Interpret Auto Layout -> CSS Flexbox"
+echo "  /fca:generate-react        Generate React/TSX from Figma node"
+echo "  /fca:generate-html         Generate HTML + layered CSS"
+echo "  /fca:extract-tokens        Extract design tokens -> CSS vars + Tailwind"
+echo "  /fca:map-payload-block     Map Figma component -> PayloadCMS block"
+echo "  /fca:audit-plugin          Audit plugin against best practices"
 echo ""
 echo "Tip: Use /clear before invoking a skill for a fresh context window."

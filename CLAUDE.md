@@ -40,12 +40,12 @@ Use this agent as an expert reference for Figma plugin development, design-to-co
 
 | Command | Description | Knowledge Modules |
 |---------|-------------|-------------------|
-| `/figma-code-agent:interpret-layout` | Interpret Auto Layout → CSS Flexbox | layout |
-| `/figma-code-agent:generate-react` | Generate React/TSX from Figma node | layout, visual, typography, assets, semantic, css-strategy |
-| `/figma-code-agent:generate-html` | Generate HTML + layered CSS | layout, visual, typography, assets, semantic, css-strategy, design-tokens |
-| `/figma-code-agent:extract-tokens` | Extract design tokens → CSS vars + Tailwind | design-tokens, design-tokens-variables, figma-api-variables, css-strategy |
-| `/figma-code-agent:map-payload-block` | Map Figma component → PayloadCMS block | payload-blocks, payload-figma-mapping, payload-visual-builder, css-strategy |
-| `/figma-code-agent:audit-plugin` | Audit plugin against best practices | plugin-architecture, plugin-codegen, plugin-best-practices, figma-api-plugin |
+| `/fca:interpret-layout` | Interpret Auto Layout → CSS Flexbox | layout |
+| `/fca:generate-react` | Generate React/TSX from Figma node | layout, visual, typography, assets, semantic, css-strategy |
+| `/fca:generate-html` | Generate HTML + layered CSS | layout, visual, typography, assets, semantic, css-strategy, design-tokens |
+| `/fca:extract-tokens` | Extract design tokens → CSS vars + Tailwind | design-tokens, design-tokens-variables, figma-api-variables, css-strategy |
+| `/fca:map-payload-block` | Map Figma component → PayloadCMS block | payload-blocks, payload-figma-mapping, payload-visual-builder, css-strategy |
+| `/fca:audit-plugin` | Audit plugin against best practices | plugin-architecture, plugin-codegen, plugin-best-practices, figma-api-plugin |
 
 ## Installation
 
@@ -92,12 +92,12 @@ claude --plugin-dir /path/to/figma-code-agent
 After installation, invoke skills in Claude Code:
 
 ```
-/figma-code-agent:interpret-layout <paste Figma Auto Layout JSON>
-/figma-code-agent:generate-react <paste Figma node data or describe component>
-/figma-code-agent:generate-html <paste Figma node data>
-/figma-code-agent:extract-tokens <paste Figma Variables API response>
-/figma-code-agent:map-payload-block <paste Figma component data>
-/figma-code-agent:audit-plugin <path to plugin codebase>
+/fca:interpret-layout <paste Figma Auto Layout JSON>
+/fca:generate-react <paste Figma node data or describe component>
+/fca:generate-html <paste Figma node data>
+/fca:extract-tokens <paste Figma Variables API response>
+/fca:map-payload-block <paste Figma component data>
+/fca:audit-plugin <path to plugin codebase>
 ```
 
 ### Reference knowledge in other projects

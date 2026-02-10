@@ -1,5 +1,5 @@
 {
-  "name": "figma-code-agent",
+  "name": "fca",
   "version": "1.0.0",
   "description": "Figma design-to-code expertise — production patterns for layout interpretation, React/HTML generation, token extraction, PayloadCMS mapping, and plugin auditing.",
   "author": {

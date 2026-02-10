@@ -47,17 +47,17 @@ After installation, invoke skills directly in Claude Code:
 
 | Skill | What It Does |
 |-------|-------------|
-| `/figma-code-agent:interpret-layout` | Convert Figma Auto Layout to CSS Flexbox |
-| `/figma-code-agent:generate-react` | Generate a React/TSX component from Figma node data |
-| `/figma-code-agent:generate-html` | Generate semantic HTML + CSS from Figma node data |
-| `/figma-code-agent:extract-tokens` | Extract design tokens into CSS variables + Tailwind config |
-| `/figma-code-agent:map-payload-block` | Map a Figma component to a PayloadCMS block |
-| `/figma-code-agent:audit-plugin` | Audit a Figma plugin against production best practices |
+| `/fca:interpret-layout` | Convert Figma Auto Layout to CSS Flexbox |
+| `/fca:generate-react` | Generate a React/TSX component from Figma node data |
+| `/fca:generate-html` | Generate semantic HTML + CSS from Figma node data |
+| `/fca:extract-tokens` | Extract design tokens into CSS variables + Tailwind config |
+| `/fca:map-payload-block` | Map a Figma component to a PayloadCMS block |
+| `/fca:audit-plugin` | Audit a Figma plugin against production best practices |
 
 ### Example
 
 ```
-/figma-code-agent:generate-react <paste Figma node JSON or describe the component>
+/fca:generate-react <paste Figma node JSON or describe the component>
 ```
 
 Each skill loads the relevant knowledge modules automatically and follows a structured multi-step process to produce accurate output.
