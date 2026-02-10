@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Figma Agent — Manual Skill Installer (Fallback)
+# Figma Agent — Manual Skill Installer
 #
-# Preferred installation: claude plugin add /path/to/figma-agent
+# Preferred: claude --plugin-dir /path/to/figma-agent
 #
-# This script is a fallback for manually symlinking skills to ~/.claude/skills/
-# when the plugin system is not available.
+# This script manually symlinks skills to ~/.claude/skills/ as an alternative
+# to loading the plugin with --plugin-dir.
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SKILLS_DIR="${HOME}/.claude/skills"
@@ -31,7 +31,7 @@ usage() {
   cat <<EOF
 Figma Agent — Manual Skill Installer (Fallback)
 
-Preferred: claude plugin add /path/to/figma-agent
+Preferred: claude --plugin-dir /path/to/figma-agent
 
 Usage: ./install.sh [OPTIONS]
 

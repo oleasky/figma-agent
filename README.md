@@ -14,9 +14,20 @@ Figma Agent turns Claude into a Figma expert. It encodes production-proven patte
 
 ## Installation
 
+### Load as a plugin (recommended)
+
 ```bash
-# Install as Claude Code plugin
-claude plugin add /path/to/figma-agent
+# Load directly during development or personal use
+claude --plugin-dir /path/to/figma-agent
+```
+
+To make it permanent, publish to a [plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces) and install with `/plugin install`.
+
+### Manual installation (alternative)
+
+```bash
+# Symlink all skills to ~/.claude/skills/
+./install.sh
 ```
 
 ## Skills

@@ -49,17 +49,16 @@ Use this agent as an expert reference for Figma plugin development, design-to-co
 
 ## Installation
 
-### Install as Claude Code plugin (recommended)
+### Load as a plugin (recommended)
 
 ```bash
-# From local path
-claude plugin add /path/to/figma-agent
-
-# From GitHub
-claude plugin add aolea/figma-agent
+# Load directly when starting Claude Code
+claude --plugin-dir /path/to/figma-agent
 ```
 
-### Manual installation (fallback)
+To make it permanently available, publish to a [plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces) and install with `/plugin install`.
+
+### Manual installation (alternative)
 
 ```bash
 # Symlink all skills
