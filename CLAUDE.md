@@ -40,12 +40,12 @@ Use this agent as an expert reference for Figma plugin development, design-to-co
 
 | Command | Description | Knowledge Modules |
 |---------|-------------|-------------------|
-| `/figma-agent:interpret-layout` | Interpret Auto Layout → CSS Flexbox | layout |
-| `/figma-agent:generate-react` | Generate React/TSX from Figma node | layout, visual, typography, assets, semantic, css-strategy |
-| `/figma-agent:generate-html` | Generate HTML + layered CSS | layout, visual, typography, assets, semantic, css-strategy, design-tokens |
-| `/figma-agent:extract-tokens` | Extract design tokens → CSS vars + Tailwind | design-tokens, design-tokens-variables, figma-api-variables, css-strategy |
-| `/figma-agent:map-payload-block` | Map Figma component → PayloadCMS block | payload-blocks, payload-figma-mapping, payload-visual-builder, css-strategy |
-| `/figma-agent:audit-plugin` | Audit plugin against best practices | plugin-architecture, plugin-codegen, plugin-best-practices, figma-api-plugin |
+| `/figma-code-agent:interpret-layout` | Interpret Auto Layout → CSS Flexbox | layout |
+| `/figma-code-agent:generate-react` | Generate React/TSX from Figma node | layout, visual, typography, assets, semantic, css-strategy |
+| `/figma-code-agent:generate-html` | Generate HTML + layered CSS | layout, visual, typography, assets, semantic, css-strategy, design-tokens |
+| `/figma-code-agent:extract-tokens` | Extract design tokens → CSS vars + Tailwind | design-tokens, design-tokens-variables, figma-api-variables, css-strategy |
+| `/figma-code-agent:map-payload-block` | Map Figma component → PayloadCMS block | payload-blocks, payload-figma-mapping, payload-visual-builder, css-strategy |
+| `/figma-code-agent:audit-plugin` | Audit plugin against best practices | plugin-architecture, plugin-codegen, plugin-best-practices, figma-api-plugin |
 
 ## Installation
 
@@ -53,20 +53,20 @@ Use this agent as an expert reference for Figma plugin development, design-to-co
 
 ```bash
 # Install globally — available in all projects
-npx figma-agent
+npx figma-code-agent
 
 # Install to current project only
-npx figma-agent --local
+npx figma-code-agent --local
 
 # Remove installed files
-npx figma-agent --uninstall
+npx figma-code-agent --uninstall
 ```
 
 ### Plugin mode (for development)
 
 ```bash
 # Load directly when starting Claude Code
-claude --plugin-dir /path/to/figma-agent
+claude --plugin-dir /path/to/figma-code-agent
 ```
 
 ### Manual installation (requires clone)
@@ -92,12 +92,12 @@ claude --plugin-dir /path/to/figma-agent
 After installation, invoke skills in Claude Code:
 
 ```
-/figma-agent:interpret-layout <paste Figma Auto Layout JSON>
-/figma-agent:generate-react <paste Figma node data or describe component>
-/figma-agent:generate-html <paste Figma node data>
-/figma-agent:extract-tokens <paste Figma Variables API response>
-/figma-agent:map-payload-block <paste Figma component data>
-/figma-agent:audit-plugin <path to plugin codebase>
+/figma-code-agent:interpret-layout <paste Figma Auto Layout JSON>
+/figma-code-agent:generate-react <paste Figma node data or describe component>
+/figma-code-agent:generate-html <paste Figma node data>
+/figma-code-agent:extract-tokens <paste Figma Variables API response>
+/figma-code-agent:map-payload-block <paste Figma component data>
+/figma-code-agent:audit-plugin <path to plugin codebase>
 ```
 
 ### Reference knowledge in other projects
@@ -105,8 +105,8 @@ After installation, invoke skills in Claude Code:
 Add to your project's `CLAUDE.md` or use inline @references:
 
 ```
-@/path/to/figma-agent/knowledge/figma-api-rest.md
-@/path/to/figma-agent/knowledge/design-to-code-layout.md
+@/path/to/figma-code-agent/knowledge/figma-api-rest.md
+@/path/to/figma-code-agent/knowledge/design-to-code-layout.md
 ```
 
 ### Reference in project CLAUDE.md
@@ -114,7 +114,7 @@ Add to your project's `CLAUDE.md` or use inline @references:
 ```markdown
 ## Figma Expertise
 This project uses the Figma Agent for design-to-code knowledge.
-See: /path/to/figma-agent/CLAUDE.md
+See: /path/to/figma-code-agent/CLAUDE.md
 ```
 
 ## CSS Strategy

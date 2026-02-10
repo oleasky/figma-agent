@@ -3,14 +3,14 @@ set -euo pipefail
 
 # Figma Agent — Manual Skill Installer
 #
-# Preferred: claude --plugin-dir /path/to/figma-agent
+# Preferred: claude --plugin-dir /path/to/figma-code-agent
 #
 # This script manually symlinks skills to ~/.claude/skills/ as an alternative
 # to loading the plugin with --plugin-dir.
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SKILLS_DIR="${HOME}/.claude/skills"
-PLUGIN_NAME="figma-agent"
+PLUGIN_NAME="figma-code-agent"
 
 # Skill names (directory names under skills/)
 SKILL_NAMES=(
@@ -31,7 +31,7 @@ usage() {
   cat <<EOF
 Figma Agent — Manual Skill Installer (Fallback)
 
-Preferred: claude --plugin-dir /path/to/figma-agent
+Preferred: claude --plugin-dir /path/to/figma-code-agent
 
 Usage: ./install.sh [OPTIONS]
 
@@ -50,7 +50,7 @@ Skills installed:
   audit-plugin          Audit plugin against best practices
 
 Install location: ~/.claude/skills/${PLUGIN_NAME}--{name}/SKILL.md
-Invocation:       /figma-agent:{skill-name}
+Invocation:       /figma-code-agent:{skill-name}
 EOF
 }
 
@@ -136,7 +136,7 @@ done
 
 if [[ $missing -gt 0 ]]; then
   echo ""
-  echo "Aborting: ${missing} source file(s) missing. Run from the figma-agent root directory."
+  echo "Aborting: ${missing} source file(s) missing. Run from the figma-code-agent root directory."
   exit 1
 fi
 echo "  All ${#SKILL_NAMES[@]} source files found."
@@ -214,11 +214,11 @@ fi
 
 echo ""
 echo "Invoke skills in Claude Code:"
-echo "  /figma-agent:interpret-layout      Interpret Auto Layout -> CSS Flexbox"
-echo "  /figma-agent:generate-react        Generate React/TSX from Figma node"
-echo "  /figma-agent:generate-html         Generate HTML + layered CSS"
-echo "  /figma-agent:extract-tokens        Extract design tokens -> CSS vars + Tailwind"
-echo "  /figma-agent:map-payload-block     Map Figma component -> PayloadCMS block"
-echo "  /figma-agent:audit-plugin          Audit plugin against best practices"
+echo "  /figma-code-agent:interpret-layout      Interpret Auto Layout -> CSS Flexbox"
+echo "  /figma-code-agent:generate-react        Generate React/TSX from Figma node"
+echo "  /figma-code-agent:generate-html         Generate HTML + layered CSS"
+echo "  /figma-code-agent:extract-tokens        Extract design tokens -> CSS vars + Tailwind"
+echo "  /figma-code-agent:map-payload-block     Map Figma component -> PayloadCMS block"
+echo "  /figma-code-agent:audit-plugin          Audit plugin against best practices"
 echo ""
 echo "Tip: Use /clear before invoking a skill for a fresh context window."

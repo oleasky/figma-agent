@@ -55,8 +55,8 @@ Each knowledge file follows this structure:
 Reference any module in your project's `CLAUDE.md` or inline:
 
 ```
-@/path/to/figma-agent/knowledge/figma-api-rest.md
-@/path/to/figma-agent/knowledge/design-to-code-layout.md
+@/path/to/figma-code-agent/knowledge/figma-api-rest.md
+@/path/to/figma-code-agent/knowledge/design-to-code-layout.md
 ```
 
 Skills in `skills/` automatically @reference the knowledge modules they depend on.

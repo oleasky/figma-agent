@@ -1,9 +1,9 @@
 {
-  "name": "figma-agent",
+  "name": "figma-code-agent",
   "version": "1.0.0",
   "description": "Figma design-to-code expertise for Claude Code — 19 knowledge modules and 6 invokable skills for layout interpretation, React/HTML generation, token extraction, PayloadCMS mapping, and plugin auditing.",
   "bin": {
-    "figma-agent": "bin/install.js"
+    "figma-code-agent": "bin/install.js"
   },
   "files": [
     "bin",
@@ -23,6 +23,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aolea/figma-agent"
+    "url": "https://github.com/aolea/figma-code-agent"
   }
 }

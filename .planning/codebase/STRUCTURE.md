@@ -5,7 +5,7 @@
 ## Directory Layout
 
 ```
-figma-agent/
+figma-code-agent/
 ├── .planning/
 │   ├── codebase/       # Codebase analysis documents (this mapping)
 │   └── phases/         # Phase plans and summaries

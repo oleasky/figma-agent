@@ -18,20 +18,20 @@ Figma Agent turns Claude into a Figma expert. It encodes production-proven patte
 
 ```bash
 # Install globally — available in all projects
-npx figma-agent
+npx figma-code-agent
 
 # Install to current project only
-npx figma-agent --local
+npx figma-code-agent --local
 
 # Remove installed files
-npx figma-agent --uninstall
+npx figma-code-agent --uninstall
 ```
 
 ### Plugin mode (for development)
 
 ```bash
 # Load directly when starting Claude Code
-claude --plugin-dir /path/to/figma-agent
+claude --plugin-dir /path/to/figma-code-agent
 ```
 
 ### Manual (requires clone)
@@ -47,17 +47,17 @@ After installation, invoke skills directly in Claude Code:
 
 | Skill | What It Does |
 |-------|-------------|
-| `/figma-agent:interpret-layout` | Convert Figma Auto Layout to CSS Flexbox |
-| `/figma-agent:generate-react` | Generate a React/TSX component from Figma node data |
-| `/figma-agent:generate-html` | Generate semantic HTML + CSS from Figma node data |
-| `/figma-agent:extract-tokens` | Extract design tokens into CSS variables + Tailwind config |
-| `/figma-agent:map-payload-block` | Map a Figma component to a PayloadCMS block |
-| `/figma-agent:audit-plugin` | Audit a Figma plugin against production best practices |
+| `/figma-code-agent:interpret-layout` | Convert Figma Auto Layout to CSS Flexbox |
+| `/figma-code-agent:generate-react` | Generate a React/TSX component from Figma node data |
+| `/figma-code-agent:generate-html` | Generate semantic HTML + CSS from Figma node data |
+| `/figma-code-agent:extract-tokens` | Extract design tokens into CSS variables + Tailwind config |
+| `/figma-code-agent:map-payload-block` | Map a Figma component to a PayloadCMS block |
+| `/figma-code-agent:audit-plugin` | Audit a Figma plugin against production best practices |
 
 ### Example
 
 ```
-/figma-agent:generate-react <paste Figma node JSON or describe the component>
+/figma-code-agent:generate-react <paste Figma node JSON or describe the component>
 ```
 
 Each skill loads the relevant knowledge modules automatically and follows a structured multi-step process to produce accurate output.
@@ -77,13 +77,13 @@ Each skill loads the relevant knowledge modules automatically and follows a stru
 Reference any module directly in your project:
 
 ```
-@/path/to/figma-agent/knowledge/design-to-code-layout.md
+@/path/to/figma-code-agent/knowledge/design-to-code-layout.md
 ```
 
 ## Project Structure
 
 ```
-figma-agent/
+figma-code-agent/
   bin/
     install.js           # npx installer (copies files to ~/.claude/)
   .claude-plugin/
