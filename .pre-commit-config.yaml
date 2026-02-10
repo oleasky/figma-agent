@@ -1,0 +1,37 @@
+# Only run hooks on commit by default; trufflehog explicitly runs on pre-push
+default_stages: [pre-commit]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.security/secrets.baseline']
+        exclude: '(pnpm-lock\.yaml|package-lock\.json|yarn\.lock|\.security/secrets\.baseline)$'
+
+  # Semgrep for additional security checks (catches secrets in seed scripts, etc.)
+  - repo: https://github.com/returntocorp/semgrep
+    rev: v1.73.0
+    hooks:
+      - id: semgrep
+        args: ["--config", "p/ci", "--error", "--metrics=off"]
+
+  # Pre-push hook: comprehensive secret scan with verification
+  - repo: local
+    hooks:
+      - id: trufflehog-filesystem
+        name: trufflehog filesystem scan (no node_modules)
+        entry: trufflehog filesystem . --no-update --exclude-paths .security/trufflehogignore
+        language: system
+        stages: [pre-push]
+        pass_filenames: false
+        always_run: true

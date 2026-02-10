@@ -1,0 +1,17 @@
+# Environment files (protect secrets)
+.env
+.env.local
+.env.*.local
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor artifacts
+*.swp
+*.swo
+*~
+.idea/
+
+# Dependencies (future-proofing)
+node_modules/
