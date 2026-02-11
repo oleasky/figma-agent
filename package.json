@@ -1,6 +1,6 @@
 {
   "name": "figma-code-agent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Figma developer expert tool for Claude Code — 19 knowledge modules and 10 invokable skills for building plugins, codegen plugins, importers, token pipelines, and design-to-code workflows.",
   "bin": {
     "figma-code-agent": "bin/install.js"
