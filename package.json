@@ -31,6 +31,10 @@
     "design-tokens",
     "payloadcms"
   ],
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  },
   "author": "aolea",
   "license": "MIT",
   "repository": {
